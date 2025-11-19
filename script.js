@@ -51,6 +51,18 @@ const quotes = [
     { text: "There is nothing noble in being superior to your fellow man; true nobility is being superior to your former self.", author: "Ernest Hemingway" }
 ];
 
+const backgrounds = [
+  "url('images/bg1.jpeg')",
+  "url('images/bg2.jpeg')",
+  "url('images/bg3.jpeg')",
+  "url('images/bg4.jpeg')",
+  "url('images/bg5.jpeg')",
+  "url('images/bg6.jpeg')",
+  "url('images/bg7.jpeg')",
+  "url('images/bg8.jpeg')",
+  "url('images/bg9.jpeg')",
+];
+
 const quoteEl = document.getElementById("quote");
 const authorEl = document.getElementById("author");
 const newQuoteBtn = document.getElementById("new-quote");
@@ -61,6 +73,12 @@ function getQuote() {
   const quote = quotes[random];
   quoteEl.textContent = quote.text;
   authorEl.textContent = quote.author;
+
+const bgRandom = Math.floor(Math.random() * backgrounds.length);
+document.body.style.background = `${backgrounds[bgRandom]}, radial-gradient(#f85c70,#75e6da)`;
+document.body.style.backgroundSize = "cover";
+document.body.style.backgroundPosition = "center";
+document.body.style.transition = "background 0.6s ease-in-out";   // <-- important
 }
 
 function copyQuote() {

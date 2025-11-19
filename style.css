@@ -4,8 +4,10 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    background:radial-gradient(#f85c70,#75e6da);}
+    margin: 0;background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 .container{
     background-color: #ebfdff;
