@@ -75,10 +75,15 @@ function getQuote() {
   authorEl.textContent = quote.author;
 
 const bgRandom = Math.floor(Math.random() * backgrounds.length);
-document.body.style.background = `${backgrounds[bgRandom]}, radial-gradient(#f85c70,#75e6da)`;
+document.body.style.background = `
+  linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)),
+  ${backgrounds[bgRandom]}
+`;
 document.body.style.backgroundSize = "cover";
 document.body.style.backgroundPosition = "center";
-document.body.style.transition = "background 0.6s ease-in-out";   // <-- important
+document.body.style.backgroundRepeat = "no-repeat";
+document.body.style.backgroundAttachment = "fixed"; // optional but looks premium
+document.body.style.transition = "background 0.6s ease-in-out";
 }
 
 function copyQuote() {
